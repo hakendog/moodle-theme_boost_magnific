@@ -92,6 +92,14 @@
                             <div class="divider border-start h-75 align-self-center mx-1"></div>
                         {{/langmenu}}
 
+                        <button type="button"
+                                class="btn btn-sm btn-outline-secondary mx-1"
+                                data-action="toggle-color-mode"
+                                aria-label="Toggle color mode"
+                                title="Toggle color mode">
+                            <span data-region="color-mode-icon">Dark</span>
+                        </button>
+
                         {{{ output.navbar_plugin_output }}}
 
                         <div class="d-flex align-items-stretch usermenu-container" data-region="usermenu">
@@ -155,6 +163,15 @@
                     {{> theme_boost_magnific/language_menu }}
                     <div class="divider border-start h-75 align-self-center mx-1"></div>
                 {{/langmenu}}
+
+                <button type="button"
+                        class="btn btn-sm btn-outline-secondary mx-1"
+                        data-action="toggle-color-mode"
+                        aria-label="Toggle color mode"
+                        title="Toggle color mode">
+                    <span data-region="color-mode-icon">Dark</span>
+                </button>
+
                 {{{ output.navbar_plugin_output }}}
                 <div class="d-flex align-items-stretch usermenu-container" data-region="usermenu">
                     {{#usermenu}}
@@ -171,6 +188,38 @@
 
 <script>
 (function () {
+    const colorModeKey = "boost_magnific-color-mode";
+    function resolveMode() {
+        const stored = window.localStorage ? window.localStorage.getItem(colorModeKey) : null;
+        if (stored === "light" || stored === "dark") {
+            return stored;
+        }
+        return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+
+    function applyMode(mode) {
+        const root = document.documentElement;
+        root.setAttribute("data-bs-theme", mode);
+        const icons = document.querySelectorAll("[data-region='color-mode-icon']");
+        icons.forEach(function (icon) {
+            icon.textContent = mode === "dark" ? "Light" : "Dark";
+        });
+    }
+
+    function toggleMode() {
+        const current = document.documentElement.getAttribute("data-bs-theme") === "dark" ? "dark" : "light";
+        const next = current === "dark" ? "light" : "dark";
+        if (window.localStorage) {
+            window.localStorage.setItem(colorModeKey, next);
+        }
+        applyMode(next);
+    }
+
+    applyMode(resolveMode());
+    document.querySelectorAll("[data-action='toggle-color-mode']").forEach(function (btn) {
+        btn.addEventListener("click", toggleMode);
+    });
+
     let lastHeight = -1;
     document.addEventListener("scroll", document_scroll_navbar);
     document_scroll_navbar();
