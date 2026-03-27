@@ -266,9 +266,33 @@
 </script>
 
 <style>
+html[data-bs-theme="dark"] {
+    --bs-body-bg: #0b1220;
+    --bs-body-color: #e5e7eb;
+    --bs-emphasis-color: #f9fafb;
+    --bs-secondary-bg: #111827;
+    --bs-tertiary-bg: #1f2937;
+    --bs-border-color: #374151;
+    --bs-card-bg: #1f2937;
+    --bs-card-color: #e5e7eb;
+    --bs-light-rgb: 31, 41, 55;
+}
+
 html[data-bs-theme="dark"] body {
     background: #0b1220;
     color: #e5e7eb;
+}
+
+html[data-bs-theme="dark"] #page,
+html[data-bs-theme="dark"] #page-wrapper,
+html[data-bs-theme="dark"] #page-content,
+html[data-bs-theme="dark"] #region-main,
+html[data-bs-theme="dark"] .main-inner,
+html[data-bs-theme="dark"] .course-content,
+html[data-bs-theme="dark"] .section,
+html[data-bs-theme="dark"] .bg-white {
+    background: #0b1220 !important;
+    color: #e5e7eb !important;
 }
 
 html[data-bs-theme="dark"] .navbar.fixed-top {
@@ -291,10 +315,27 @@ html[data-bs-theme="dark"] .card,
 html[data-bs-theme="dark"] .block,
 html[data-bs-theme="dark"] .list-group-item,
 html[data-bs-theme="dark"] .secondary-navigation,
-html[data-bs-theme="dark"] .activity-item {
+html[data-bs-theme="dark"] .activity-item,
+html[data-bs-theme="dark"] .dropdown-menu,
+html[data-bs-theme="dark"] .popover,
+html[data-bs-theme="dark"] .modal-content,
+html[data-bs-theme="dark"] .nav-tabs,
+html[data-bs-theme="dark"] .breadcrumb,
+html[data-bs-theme="dark"] .formulation {
     background: #1f2937 !important;
     color: #e5e7eb !important;
     border-color: #374151 !important;
+}
+
+html[data-bs-theme="dark"] .nav-tabs .nav-link {
+    color: #d1d5db !important;
+    border-color: #374151 !important;
+}
+
+html[data-bs-theme="dark"] .nav-tabs .nav-link.active {
+    background: #111827 !important;
+    color: #f9fafb !important;
+    border-color: #4b5563 !important;
 }
 
 html[data-bs-theme="dark"] .table,
@@ -302,6 +343,39 @@ html[data-bs-theme="dark"] .table th,
 html[data-bs-theme="dark"] .table td {
     color: #e5e7eb !important;
     border-color: #374151 !important;
+}
+
+html[data-bs-theme="dark"] .table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+html[data-bs-theme="dark"] .form-control,
+html[data-bs-theme="dark"] .form-select,
+html[data-bs-theme="dark"] textarea,
+html[data-bs-theme="dark"] input[type="text"],
+html[data-bs-theme="dark"] input[type="email"],
+html[data-bs-theme="dark"] input[type="search"],
+html[data-bs-theme="dark"] input[type="password"] {
+    background: #111827 !important;
+    color: #f3f4f6 !important;
+    border-color: #4b5563 !important;
+}
+
+html[data-bs-theme="dark"] .form-control::placeholder {
+    color: #9ca3af !important;
+}
+
+html[data-bs-theme="dark"] .alert,
+html[data-bs-theme="dark"] .alert-info,
+html[data-bs-theme="dark"] .alert-secondary {
+    background: #1f2937 !important;
+    color: #e5e7eb !important;
+    border-color: #4b5563 !important;
+}
+
+html[data-bs-theme="dark"] .text-muted,
+html[data-bs-theme="dark"] .text-body-secondary {
+    color: #9ca3af !important;
 }
 
 html[data-bs-theme="dark"] a {
