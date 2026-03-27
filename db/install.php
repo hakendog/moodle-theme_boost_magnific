@@ -74,7 +74,7 @@ function xmldb_theme_boost_magnific_install() {
     theme_boost_magnific_set_config("breadcrumb_show_sections", 0);
     theme_boost_magnific_set_config("breadcrumb_show_no_link_items", 0);
 
-    theme_boost_magnific_set_config("footer_background_color", "");
+    theme_boost_magnific_set_config("footer_background_color", "#1a2a6c");
     theme_boost_magnific_set_config("footer_title_1", "");
     theme_boost_magnific_set_config("footer_html_1", "");
     theme_boost_magnific_set_config("footer_title_2", "");

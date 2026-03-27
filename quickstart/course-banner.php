@@ -184,7 +184,7 @@ $coursesmustache = [
         "defaultcolor" => theme_boost_magnific_default("override_course_primarycolor_{$course->id}", $brandcolor),
         "defaultcolorfooter" => theme_boost_magnific_default("footer_background_color", "#1a2a6c"),
         "brandcolor_background_menu" => (int) theme_boost_magnific_default("brandcolor_background_menu", 0),
-        "navbar_layout_is_institutional" => $OUTPUT->navbar_layout_is_institutional(),
+        "navbar_layout_is_institutional" => (get_config("theme_boost_magnific", "navbarlayout") == "institutional"),
         "secondary_color" => theme_boost_magnific_secondary_color($course->id),
     ]),
 ];

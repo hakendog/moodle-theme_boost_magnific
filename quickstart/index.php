@@ -229,7 +229,7 @@ $brandcolormustache = [
         "brandcolor" => true,
         "colors" => $themecolors,
         "defaultcolor" => theme_boost_magnific_default("brandcolor", "#1a2a6c", "theme_boost"),
-        "navbar_layout_is_institutional" => $OUTPUT->navbar_layout_is_institutional(),
+        "navbar_layout_is_institutional" => (get_config("theme_boost_magnific", "navbarlayout") == "institutional"),
         "secondary_color" => theme_boost_magnific_secondary_color(),
     ]),
     "return" => "logos",
@@ -265,7 +265,7 @@ if (file_exists("{$CFG->libdir}/editor/tiny/lib.php")) {
         "htmlselect" => $OUTPUT->render_from_template("theme_boost_magnific/settings/colors", [
             "footercolor" => true, "colors" => $themecolors,
             "defaultcolor" => theme_boost_magnific_default("brandcolor", "#1a2a6c"),
-            "navbar_layout_is_institutional" => $OUTPUT->navbar_layout_is_institutional(),
+            "navbar_layout_is_institutional" => (get_config("theme_boost_magnific", "navbarlayout") == "institutional"),
             "secondary_color" => theme_boost_magnific_secondary_color(),
         ]),
         "blocks" => [

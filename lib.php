@@ -197,6 +197,9 @@ function theme_boost_magnific_get_pre_scss($theme) {
     }
 
     $footerbg = theme_boost_magnific_default("footer_background_color", $brandcolor);
+    if (!isset($footerbg[3]) || !preg_match('/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/', $footerbg)) {
+        $footerbg = $primarycolor;
+    }
     $footercolor = footer_renderer::get_footer_color($footerbg, "#333333", "#ffffff");
     $scss = "
         \$primary      : {$primarycolor};
